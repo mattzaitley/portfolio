@@ -1,0 +1,24 @@
+@mixin bp($point) {
+// Portrait tablet and small desktops
+	@if $point == large {
+		@media (max-width: 940px) { @content; }
+	}
+//Landscape phone to portrait tablet
+	@if $point == medium {
+		@media (max-width: 768px) { @content; }
+	}
+//Landscape phones and down
+	@if $point == small {
+		@media (max-width: 480px) { @content; }
+	}
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}

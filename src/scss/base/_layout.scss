@@ -1,0 +1,57 @@
+
+.container {
+	max-width:1200px;
+	margin:0 auto;
+}
+
+.content {
+	float:left;
+	width:65%;
+	margin-right: 5%;
+
+}
+
+.full {
+	width:100%;
+}
+
+//tables
+table td {
+	padding:10px;
+}
+table tr td:first-of-type {
+	padding-right: 0;
+}
+
+//def lists
+dt {
+	font-weight: 600;
+	padding-bottom: 5px;
+}
+dd {
+	padding:10px;
+	margin-left: 10px;
+}
+
+.sidebar {
+	width:30%;
+	float:left;
+	.sidebar ul {
+		margin:0;
+		padding:0;
+		.sidebar ul li {
+			list-style: none;
+    	}
+	}
+}
+
+footer {
+	clear:both;
+}
+
+pre {
+	background: darken($light, 10);
+	padding:10px;
+	border-radius: 4px;
+	border:1px solid #ccc;
+}

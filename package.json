@@ -1,0 +1,31 @@
+{
+  "name": "mattfairley-dot-com",
+  "version": "1.0.0",
+  "description": "Portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattfairley/portfolio/"
+  },
+  "author": "Matt Fairley",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^0.1.3",
+    "gulp": "^3.8.9",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-cache": "^0.2.4",
+    "gulp-concat": "^2.4.1",
+    "gulp-imagemin": "^1.2.1",
+    "gulp-jshint": "^1.9.0",
+    "gulp-livereload": "^2.1.1",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-notify": "^2.0.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-uglify": "^1.0.1"
+  }
+}

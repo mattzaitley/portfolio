@@ -1,0 +1,35 @@
+
+// Theme Name: Portfolio
+// Theme URI: http://mattfairley.com;
+// Description: The theme for my personal portfolio site
+// Version: 1.0
+// Author: Matt Fairley
+// Author URI: http://mattfairley.com
+
+// =========================================== 
+// BASE STYLES
+// ===========================================
+@import "base/normalize";
+@import "base/vars";
+@import "base/mixins";
+@import "base/grid";
+@import "base/defaults";
+@import "base/layout";
+@import "base/typography";
+@import "base/backgrounds";
+// ===========================================
+// VENDOR STYLES
+// ===========================================
+
+// ===========================================
+// COMPONENTS
+// ===========================================
+@import "components/buttons";
+@import "components/forms";
+@import "components/comments";
+
+// ===========================================
+// REGIONS
+// ===========================================
+
+
