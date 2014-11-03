@@ -1,13 +1,11 @@
 
 .container {
-	max-width:1200px;
+	max-width:1000px;
 	margin:0 auto;
 }
 
 .content {
 	float:left;
-	width:65%;
-	margin-right: 5%;
 
 }
 
@@ -25,7 +23,6 @@ table tr td:first-of-type {
 
 //def lists
 dt {
-	font-weight: 600;
 	padding-bottom: 5px;
 }
 dd {
