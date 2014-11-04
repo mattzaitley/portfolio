@@ -35,8 +35,6 @@
       	?>
     </div> <!-- /.content -->
 
-    <?php get_sidebar(); ?>
-
   </div> <!-- /.container -->
 </div> <!-- /.main -->
 

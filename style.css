@@ -230,6 +230,19 @@ input[type="checkbox"], input[type="radio"] {
   padding: 0;
 }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
   *zoom: 1;
@@ -246,7 +259,6 @@ img {
   max-width: 100%;
 }
 
-/* Global Classes / Wordpress Specific */
 .aligncenter {
   text-align: center;
   margin: 0 auto;
@@ -275,18 +287,28 @@ img.alignright {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-}
-
-.content {
-  float: left;
-  width: 65%;
-  margin-right: 5%;
 }
 
 .full {
   width: 100%;
+}
+
+header {
+  padding: 10px;
+  *zoom: 1;
+}
+header:before, header:after {
+  content: "";
+  display: table;
+}
+header:after {
+  clear: both;
+}
+
+footer {
+  clear: both;
 }
 
 table td {
@@ -298,29 +320,12 @@ table tr td:first-of-type {
 }
 
 dt {
-  font-weight: 600;
   padding-bottom: 5px;
 }
 
 dd {
   padding: 10px;
   margin-left: 10px;
-}
-
-.sidebar {
-  width: 30%;
-  float: left;
-}
-.sidebar .sidebar ul {
-  margin: 0;
-  padding: 0;
-}
-.sidebar .sidebar ul .sidebar ul li {
-  list-style: none;
-}
-
-footer {
-  clear: both;
 }
 
 pre {
@@ -332,6 +337,8 @@ pre {
 
 body {
   color: #2c3e50;
+  font-family: "lato", serif;
+  background: #ecf0f1;
 }
 
 a {
@@ -341,6 +348,15 @@ a {
 
 a:hover {
   color: lightseagreen;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "arvo", sans-serif;
+  display: inline;
+  float: left;
+  width: 47.91667%;
+  margin: 0 1.04167%;
 }
 
 p {
@@ -567,4 +583,33 @@ p.form-allowed-tags, .nocomments {
 
 #respond p, #comments-list ul #respond {
   margin: 0;
+}
+
+nav {
+  display: inline;
+  float: left;
+  width: 47.91667%;
+  margin: 0 1.04167%;
+}
+
+ul.menu {
+  list-style: none;
+  padding: 0;
+  font-size: 0px;
+  font-size: 0rem;
+}
+
+li.menu-item {
+  display: inline-block;
+  width: 25%;
+}
+li.menu-item a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

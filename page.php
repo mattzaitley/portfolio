@@ -2,6 +2,7 @@
 
 <div class="main">
   <div class="container">
+  <p>page.php</p>
 
     <div class="content">
       <?php // Start the loop ?>
@@ -12,8 +13,6 @@
 
       <?php endwhile; // end the loop?>
     </div> <!-- /,content -->
-
-    <?php get_sidebar(); ?>
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->

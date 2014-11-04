@@ -1,5 +1,7 @@
 body {
   color: $dark;
+  font-family: $main-font;
+  background: $light;
 }
 
 // /* links */
@@ -12,7 +14,11 @@ a:hover {
 	color: darken($accent, 10);
 }
 
-
+h1 {
+	text-transform: uppercase;
+	font-family: $display-font;
+	@include column(6);
+}
 
 // /* paragraphs */
 p {

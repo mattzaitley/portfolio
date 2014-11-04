@@ -1,0 +1,23 @@
+nav {
+	@include column(6);
+}
+
+ul.menu {
+	list-style: none;
+	padding: 0;
+	@include font-size(0px);
+}
+
+li.menu-item {
+	display: inline-block;
+	width: 25%;
+	a {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		text-transform: uppercase;
+		@include font-size(20px);
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+}

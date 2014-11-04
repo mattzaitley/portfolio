@@ -1,6 +1,5 @@
-<?php //home.php is the blog template ?>
+<?php //front-page.php is the... front page ?>
 <?php get_header(); ?>
-
 <div class="main">
   <div class="container">
 
