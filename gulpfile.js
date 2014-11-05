@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 
 gulp.task('styles', function() {
 	return gulp.src('src/scss/*.scss')
-		.pipe(plumber({errorHandler: notify.onError("Sass error!")}))
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass({ style: 'expanded' }))
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
 		.pipe(gulp.dest('./'))
@@ -27,7 +27,7 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
 	return gulp.src('src/js/**/*.js')
-		.pipe(plumber({errorHandler: notify.onError("JS error!")}))
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		// .pipe(jshint('.jshintrc'))
 		// .pipe(jshint.reporter('default'))
 		.pipe(concat('scripts.js'))
@@ -47,7 +47,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean', function(cb) {
-	del(['css', 'js', 'img'], cb)
+	del(['css', 'js'], cb)
 });
 
 gulp.task('default', ['clean'], function() {

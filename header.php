@@ -8,7 +8,8 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <?php // Load our CSS ?>
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400' rel='stylesheet' type='text/css'>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
   <?php wp_head(); ?>
@@ -19,11 +20,12 @@
 
 <header>
   <div class="container">
-    <h1>
+    <h2>
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+        <?php get_template_part('img/inline', 'logo.svg');  ?>
+        <?php the_field('page_title_short', 'option'); ?>
       </a>
-    </h1>
+    </h2>
 
     <?php wp_nav_menu( array(
       'container' => 'nav',

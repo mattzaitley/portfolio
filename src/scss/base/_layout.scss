@@ -1,7 +1,7 @@
-
 .container {
-	max-width:1000px;
+	max-width: 900px;
 	margin:0 auto;
+	padding: 10px;
 }
 
 
@@ -10,15 +10,43 @@
 }
 
 header {
-	padding: 10px;
-	@include clearfix()
-	
+	@include clearfix;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.social {
+	@include span-columns(6);
+	@include shift(3);
+}
+
+section {
+	@include clearfix;
+}
+
+.contact .social-links {
+	@include span-columns(6);
+}
+
+.contact .contact-form {
+	@include span-columns(6);
 }
 
 
 footer {
 	clear:both;
+	padding: 10px;
 }
+
+.skill-group {
+	@include span-columns(3);
+}
+
+.skill-list {
+	list-style: none;
+	padding: 0;
+}
+
 //tables
 table td {
 	padding:10px;

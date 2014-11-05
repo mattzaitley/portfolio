@@ -138,6 +138,10 @@ function hackeryou_custom_excerpt_more( $output ) {
 }
 add_filter( 'get_the_excerpt', 'hackeryou_custom_excerpt_more' );
 
+/*
+ * Remove the front-end admin bar for everybody, always
+ */
+show_admin_bar( false );
 
 /*
  * Register a single widget area.

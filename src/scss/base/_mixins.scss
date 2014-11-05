@@ -22,3 +22,8 @@
   font-size: $size;
   font-size: calculateRem($size);
 }
+
+%display {
+	text-transform: uppercase;
+	font-family: $display-font;
+}

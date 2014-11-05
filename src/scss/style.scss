@@ -6,13 +6,15 @@
 // Author: Matt Fairley
 // Author URI: http://mattfairley.com
 
+
 // =========================================== 
 // BASE STYLES
 // ===========================================
 @import "base/normalize";
 @import "base/vars";
 @import "base/mixins";
-@import "base/grid";
+@import "bourbon/bourbon";
+@import "neat/neat";
 @import "base/defaults";
 @import "base/layout";
 @import "base/typography";
@@ -20,6 +22,7 @@
 // ===========================================
 // VENDOR STYLES
 // ===========================================
+
 
 // ===========================================
 // COMPONENTS
@@ -32,5 +35,3 @@
 // ===========================================
 // REGIONS
 // ===========================================
-
-

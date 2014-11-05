@@ -1,23 +1,67 @@
+//HEADER LOGO
+
+header h2 {
+	font-family: $display-font;
+	font-weight: 400;
+	@include font-size(30px);
+	@include span-columns(2);
+	margin: 0;
+	margin-top: 15px;
+	&:hover {
+		a {
+			color: $offset;
+		}
+		svg {
+			fill: $offset;
+		}
+	}
+}
+
+svg {
+	fill: $accent;
+	width: 30px;
+	transition: 0.3s all;
+}
+
+//NAV
 nav {
-	@include column(6);
+	@include span-columns(8);
+	@include shift(2);
 }
 
 ul.menu {
 	list-style: none;
 	padding: 0;
+	display: block;
 	@include font-size(0px);
 }
-
 li.menu-item {
 	display: inline-block;
-	width: 25%;
+	margin-left: 20px;
+	float: right;
+	padding-top: 5px;
 	a {
 		display: inline-block;
 		width: 100%;
-		text-align: center;
+		text-align: left;
 		text-transform: uppercase;
-		@include font-size(20px);
-		padding-top: 8px;
-		padding-bottom: 8px;
+		font-weight: 400;
+		@include font-size(14px);
+		padding: 20px;
+		&:after {
+			content: '';
+			height: 1px;
+			bottom: -1px;
+			position: absolute;
+			left: 50%;
+			width: 0;
+			transition: 0.3s all;
+			background: $accent;
+		}
+		&:hover:after {
+			width: 100%;
+			left: 0;
+			background: $offset;
+		}
 	}
 }

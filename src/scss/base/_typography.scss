@@ -1,36 +1,88 @@
 body {
   color: $dark;
   font-family: $main-font;
-  background: $light;
+  font-weight: 300;
 }
 
-// /* links */
+// links
 a {
 	color: $accent;
 	text-decoration: none;
-}
-
-a:hover {
-	color: darken($accent, 10);
+	transition: 0.3s all;
+	position: relative;
+	&:hover {
+		color: $offset;
+	}
 }
 
 h1 {
-	text-transform: uppercase;
-	font-family: $display-font;
-	@include column(6);
+	@extend %display;
+	font-weight: 400;
+	text-align: center;
+	@include font-size(48px);
+	letter-spacing: 1px;
+	color: $accent;
 }
 
-// /* paragraphs */
+h2, h3, h4, h5 {
+	text-align: center;
+	font-weight: 300;
+}
+
+h2 {
+	@extend %display;
+}
+
+h2.tagline {
+	font-family: $main-font;
+	text-transform: none;
+}
+
+
+// paragraphs 
 p {
 	line-height: 1.5;
 }
 
-// /*blockquotes*/
+.skill-group h3 {
+	@extend %display;
+}
+
+.skill-list {
+	text-align: center;
+	line-height: 2;
+}
+
+// blockquotes
 blockquote {
 	background: $light;
 	margin:0;
 	padding:20px;
-	blockquote p {
+	p {
 		margin-top: 0;
 	}
+}
+
+//social links
+
+div.social {
+	@include font-size(0px);
+	text-align: center;
+	a {
+		@include font-size(30px);
+		padding: 10px;
+		width: 25%;
+		display: inline-block;
+	}
+}
+
+.social-links {
+	@extend div.social
+}
+
+//footer
+
+footer {
+	color: $light;
+	text-align: center;
 }

@@ -2,10 +2,12 @@ img {
   max-width:100%;
 }
 
+
+
 // Global Classes / Wordpress Specific
-.aligncenter    { text-align: center; margin: 0 auto; }
-.alignleft      { float: left; }
-.alignright     { float: right; }
-img.alignleft     { padding-right: 5px;}
-img.alignright    { padding-left: 5px; }
-.clear        { width:100%; float:left; clear:both;}
+.aligncenter	{ text-align: center; margin: 0 auto; }
+.alignleft	{ float: left; }
+.alignright	{ float: right; }
+img.alignleft 	{ padding-right: 5px;}
+img.alignright 	{ padding-left: 5px; }
+.clear	{ width:100%; float:left; clear:both;}
