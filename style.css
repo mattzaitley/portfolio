@@ -264,6 +264,11 @@ img {
   max-width: 100%;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .aligncenter {
   text-align: center;
   margin: 0 auto;
@@ -446,17 +451,35 @@ blockquote p {
   margin-top: 0;
 }
 
-div.social, .contact .social-links {
+div.social {
   font-size: 0px;
   font-size: 0rem;
   text-align: center;
 }
-div.social a, .contact .social-links a {
+div.social a {
   font-size: 30px;
   font-size: 1.875rem;
   padding: 10px;
   width: 25%;
   display: inline-block;
+}
+
+.social-links a {
+  font-size: 30px;
+  font-size: 1.875rem;
+  display: inline-block;
+}
+.social-links span {
+  text-transform: uppercase;
+  color: #2c3e50;
+  font-size: 16px;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-30%);
+      -ms-transform: translateY(-30%);
+          transform: translateY(-30%);
 }
 
 footer {
@@ -477,7 +500,7 @@ section.portfolio {
 }
 
 section.contact {
-  background: #95a5a6;
+  background: #ecf0f1;
 }
 
 footer {
@@ -738,9 +761,6 @@ nav:last-child {
 }
 
 ul.menu {
-  list-style: none;
-  padding: 0;
-  display: block;
   font-size: 0px;
   font-size: 0rem;
 }

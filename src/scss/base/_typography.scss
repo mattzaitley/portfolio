@@ -77,7 +77,19 @@ div.social {
 }
 
 .social-links {
-	@extend div.social
+	a {
+		@include font-size(30px);
+		display: inline-block;
+	}
+	span {
+		text-transform: uppercase;
+		color: $dark;
+		@include font-size(16px);
+		display: inline-block;
+		position: relative;
+		top: 50%;
+		transform: translateY(-30%);
+	}
 }
 
 //footer

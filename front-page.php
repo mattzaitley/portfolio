@@ -109,13 +109,15 @@
 	<div class="container">
 		<h2>Contact</h2>
 		<div class="social-links">
+			<p>Come find me on the internet, I'm usually there.</p>
 			<ul>
 				<?php while( has_sub_field('social_links', 'option') ): ?>
 					<li>
 					<?php $social_link = get_sub_field('social_link', 'option') ?>
 					<?php $social_name = get_sub_field('social_network', 'option') ?>
-					<a href="<?php $social_link ?>" target="_blank" title="<?php $social_name ?>" ><?php the_sub_field('social_logo', 'option') ?></a>
-					<?php the_sub_field('social_name','option') ?>
+					<a href="<?php $social_link ?>" target="_blank" title="<?php $social_name ?>" ><?php the_sub_field('social_logo', 'option') ?>
+					<span><?php the_sub_field('social_network','option') ?></span>
+					</a>
 					</li>
 				<?php endwhile; ?>
 			</ul>
