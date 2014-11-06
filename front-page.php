@@ -19,7 +19,7 @@
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="about">
+<section class="about" id="about">
 	<div class="container">
 		<?php $about = new WP_Query(
 			array(
@@ -60,16 +60,16 @@
 	</div><!-- /.container -->
 </section><!-- /.skills -->
 
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
   <div class="container">
+	<h2>My Work</h2>
 
-
-	<?php //CUSTOM LOOP FOR BRINGING IN 3 PORTFOLIO ITEMS ?>
+	<?php //CUSTOM LOOP FOR BRINGING IN 4 PORTFOLIO ITEMS ?>
 	<?php
 
 	$portfolio = new WP_Query(
 		array(
-			'posts_per_page' => 3,
+			'posts_per_page' => 4,
 			'post_type' => 'portfolio',
 			'order' => 'ASC'
 			)
@@ -79,18 +79,19 @@
 
 		<?php while ($portfolio->have_posts()) : $portfolio->the_post(); ?>
 
-			<section id="<?php echo $post->post_name; ?>">
-				<h2><?php the_title(); ?></h2>
-				<h4><?php the_field('short_desc') ?></h4>
-				<p><?php the_field('tech_used'); ?></p>
-				<div class="images">
-					<?php while( has_sub_field('portfolio_gallery') ): ?>
-						<div class="image">
-							<p><?php the_sub_field('caption'); ?></p>
-							<?php $image = get_sub_field('image'); ?>
-							<img src="<?php echo $image['sizes']['square'] ?>">
-						</div>
-					<?php endwhile; ?>
+			<section class="portfolio-piece" id="<?php echo $post->post_name; ?>">
+				<h3><?php the_title(); ?></h3>
+				<?php //get list of techs used and put them into a UL ?>
+				<?php $terms = wp_get_object_terms(get_the_ID(), 'technology', array('orderby' => 'term_id', 'order' => 'ASC', 'fields' => 'names')) ?>
+				<ul class="tech-used">
+					<?php foreach ($terms as $term) {
+						echo "<li>$term</li>";
+					} ?>
+				</ul>
+				<div class="preview-image">
+					<h4><?php the_field('short_desc') ?></h4>
+					<?php $image = get_field('preview_image'); ?>
+					<img src="<?php echo $image['sizes']['large-preview'] ?>">
 				</div>
 			</section>
 		<?php endwhile; ?>
@@ -100,12 +101,11 @@
 	<?php else:  ?>
 		<!-- [stuff that happens if there aren't any posts] -->
 	<?php endif; ?>
-
   </div> <!-- /.container -->
 </section> <!-- /.main -->
 
 <!-- CONTACT SECTION -->
-<section class="contact">
+<section class="contact" id="contact">
 	<div class="container">
 		<h2>Contact</h2>
 		<div class="social-links">

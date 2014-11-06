@@ -42,26 +42,64 @@ footer {
 	@include span-columns(3);
 }
 
-.skill-list {
-	list-style: none;
-	padding: 0;
+
+//portfolio pieces
+
+.portfolio-piece {
+	width: 50%;
+	float: left;
+	h3 {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
 }
 
-//tables
-table td {
-	padding:10px;
-}
-table tr td:first-of-type {
-	padding-right: 0;
+div.preview-image {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		background: rgba($dark, 0.7);
+		transition: 0.3s all;
+	}
+	&:hover {
+		&:after{
+			background: rgba(darken($accent, 20), 0.7);
+		}
+	}
+	h4 {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		color: $light;
+		font-weight: 700;
+		text-align: center;
+		width: 75%;
+		margin: 0 12.5%;
+	}
 }
 
-//def lists
-dt {
-	padding-bottom: 5px;
-}
-dd {
-	padding:10px;
-	margin-left: 10px;
+.tech-used {
+	text-align: center;
+	li {
+		text-transform: uppercase;
+		@include font-size(12px);
+		color: $dark;
+		border: 1px solid rgba($dark, 0.5);
+		background: rgba($accent, 0.3);
+		border-radius: 3px;
+		padding: 4px;
+		display: inline-block;
+		margin: 3px;
+		transition: 0.3s all;
+		&:hover{
+			background:rgba($offset, 0.3);
+		}
+	}
 }
 
 pre {

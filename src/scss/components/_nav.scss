@@ -32,11 +32,11 @@ nav {
 ul.menu {
 	//get rid of the g-g-g-ghost space!
 	@include font-size(0px);
+	float: right;
 }
 li.menu-item {
 	display: inline-block;
 	margin-left: 20px;
-	float: right;
 	padding-top: 5px;
 	a {
 		display: inline-block;
