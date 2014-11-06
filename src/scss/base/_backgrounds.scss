@@ -1,5 +1,7 @@
 body {
-	// background: dodgerblue;
+	background: url('img/fog.jpg');
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 section.about {
@@ -11,11 +13,11 @@ section.skills {
 }
 
 section.portfolio {
-	background: $light;
+	background: $dark;
 }
 
 section.contact {
-	background: $light;
+	// background: $light;
 }
 
 footer {

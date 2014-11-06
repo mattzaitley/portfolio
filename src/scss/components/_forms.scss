@@ -1,0 +1,40 @@
+input {
+	border: 0;
+	background: rgba($light, 0);
+	outline: 0;
+	border-bottom: 2px solid $accent;
+	color: $dark;
+	padding: 5px;
+	&:focus {
+		border-bottom: 2px solid $offset;
+		background: rgba($light, 0.3)
+	}
+}
+
+.contact input[type=submit] {
+	background: $accent;
+	color: $light;
+	border-radius: 3px;
+	text-transform: uppercase;
+	padding: 15px;
+	transition: 0s all;
+	border-bottom: 0;
+	&:hover {
+		background: darken($accent, 10);
+	}
+	&:focus,
+	&:active {
+		border-bottom: 0;
+		background: $offset;
+	}
+}
+
+textarea {
+	@extend input;
+	border-radius: 3px;
+	border: 2px solid $accent;
+	&:focus {
+		border: 2px solid $offset;
+		background: rgba($light, 0.3)
+	}
+}

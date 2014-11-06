@@ -27,3 +27,8 @@
 	text-transform: uppercase;
 	font-family: $display-font;
 }
+
+%centre-x {
+	left: 50%;
+	transform: translateX(-50%);
+}

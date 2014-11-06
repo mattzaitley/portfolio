@@ -13,7 +13,9 @@
 					<a href="<?php $social_link ?>" target="_blank" title="<?php $social_name ?>" ><?php the_sub_field('social_logo', 'option') ?></a>
 				<?php endwhile; ?>
 			</div>
-			<!-- social icons -->
+			<div class="scroll">
+				<a href="#about"><i class="fa fa-angle-down"></i></a>
+			</div><!-- /.scroll -->
 	</div><!-- /.container -->
 
 </section>
@@ -21,25 +23,31 @@
 <!-- ABOUT SECTION -->
 <section class="about" id="about">
 	<div class="container">
-		<?php $about = new WP_Query(
-			array(
-				'posts_per_page' => 1, 
-				'pagename' => 'about'
-			)
-		); ?>
+		<h2>Who I Am</h2>
+		<div class="about-content">
+			
+			<?php $about = new WP_Query(
+				array(
+					'posts_per_page' => 1, 
+					'pagename' => 'about'
+				)
+			); ?>
 
-		<?php if ( $about->have_posts() ) : ?>
+			<?php if ( $about->have_posts() ) : ?>
 
-			<?php while ( $about->have_posts() ) : $about->the_post(); ?>
-				<h2><?php the_title()?> </h2>
-				<?php the_content() ?>
-			<?php endwhile; ?>
+				<?php while ( $about->have_posts() ) : $about->the_post(); ?>
+					<?php the_content() ?>
+				<?php endwhile; ?>
 
-				<?php wp_reset_postdata(); ?>
+					<?php wp_reset_postdata(); ?>
 
-		<?php else:  ?>
-			<p>About not found</p>
-		<?php endif; ?>
+			<?php else:  ?>
+				<p>About not found</p>
+			<?php endif; ?>
+		</div> <!-- /.about-content -->
+		<div class="profile-img">
+			<img src="<?php echo get_template_directory_uri() . '/img/headshot.jpg' ?>"  alt="This is a picture of my face">
+		</div>
 	</div><!-- /.container -->
 </section><!-- /.about -->
 
@@ -47,6 +55,7 @@
 <!-- SKILLS SUB-SECTION -->
 <section class="skills">
 	<div class="container">
+		<h2>What I Know</h2>
 			<?php while( has_sub_field('skill_group', 'option') ): ?>
 				<div class="skill-group">
 					<h3><?php the_sub_field('skill_type', 'option') ?></h3>
@@ -62,7 +71,7 @@
 
 <section class="portfolio" id="portfolio">
   <div class="container">
-	<h2>My Work</h2>
+	<h2>What I Make</h2>
 
 	<?php //CUSTOM LOOP FOR BRINGING IN 4 PORTFOLIO ITEMS ?>
 	<?php
@@ -80,16 +89,21 @@
 		<?php while ($portfolio->have_posts()) : $portfolio->the_post(); ?>
 
 			<section class="portfolio-piece" id="<?php echo $post->post_name; ?>">
-				<h3><?php the_title(); ?></h3>
 				<?php //get list of techs used and put them into a UL ?>
-				<?php $terms = wp_get_object_terms(get_the_ID(), 'technology', array('orderby' => 'term_id', 'order' => 'ASC', 'fields' => 'names')) ?>
-				<ul class="tech-used">
-					<?php foreach ($terms as $term) {
-						echo "<li>$term</li>";
-					} ?>
-				</ul>
 				<div class="preview-image">
+					<h3><?php the_title(); ?></h3>
+					<?php $terms = wp_get_object_terms(get_the_ID(), 'technology', array('orderby' => 'term_id', 'order' => 'ASC', 'fields' => 'names')) ?>
+					<ul class="tech-used">
+						<?php foreach ($terms as $term) {
+							echo "<li>$term</li>";
+						} ?>
+					</ul>
 					<h4><?php the_field('short_desc') ?></h4>
+					<a href="" class="more-info" title="More info">More info</a>
+					<p>
+						<a href="<?php the_field('live_link') ?>" class="view live">View live site</a>
+						<a href="<?php the_field('github_link') ?>">View on GitHub</a>
+					</p>
 					<?php $image = get_field('preview_image'); ?>
 					<img src="<?php echo $image['sizes']['large-preview'] ?>">
 				</div>
@@ -107,7 +121,7 @@
 <!-- CONTACT SECTION -->
 <section class="contact" id="contact">
 	<div class="container">
-		<h2>Contact</h2>
+		<h2>Let's talk</h2>
 		<div class="social-links">
 			<p>Come find me on the internet, I'm usually there.</p>
 			<ul>

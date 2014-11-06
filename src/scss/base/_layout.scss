@@ -4,6 +4,11 @@
 	padding: 10px;
 }
 
+.hero {
+	height: 85vh;
+	padding-top: 100px;
+}
+
 
 .full {
 	width:100%;
@@ -24,12 +29,42 @@ section {
 	@include clearfix;
 }
 
+.about {
+	padding-bottom: 50px;
+}
+
+.about-content {
+	@include span-columns(5);
+	@include shift(1);
+}
+.profile-img {
+	@include span-columns(4);
+	@include shift(1);
+}
+
 .contact .social-links {
 	@include span-columns(6);
+	li {
+		padding: 10px;
+		padding-left: 0;
+	}
 }
 
 .contact .contact-form {
 	@include span-columns(6);
+}
+
+.scroll {
+	margin-top: 150px;
+	text-align: center;
+	@include font-size(36px);
+	a {
+		padding: 30px;
+		color: $light;
+		&:hover {
+			color: $dark;
+		}
+	}
 }
 
 
@@ -40,66 +75,6 @@ footer {
 
 .skill-group {
 	@include span-columns(3);
-}
-
-
-//portfolio pieces
-
-.portfolio-piece {
-	width: 50%;
-	float: left;
-	h3 {
-		text-transform: uppercase;
-		font-weight: 700;
-	}
-}
-
-div.preview-image {
-	position: relative;
-	&:after {
-		content: '';
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		background: rgba($dark, 0.7);
-		transition: 0.3s all;
-	}
-	&:hover {
-		&:after{
-			background: rgba(darken($accent, 20), 0.7);
-		}
-	}
-	h4 {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		z-index: 10;
-		color: $light;
-		font-weight: 700;
-		text-align: center;
-		width: 75%;
-		margin: 0 12.5%;
-	}
-}
-
-.tech-used {
-	text-align: center;
-	li {
-		text-transform: uppercase;
-		@include font-size(12px);
-		color: $dark;
-		border: 1px solid rgba($dark, 0.5);
-		background: rgba($accent, 0.3);
-		border-radius: 3px;
-		padding: 4px;
-		display: inline-block;
-		margin: 3px;
-		transition: 0.3s all;
-		&:hover{
-			background:rgba($offset, 0.3);
-		}
-	}
 }
 
 pre {
