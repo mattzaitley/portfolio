@@ -2,6 +2,7 @@
 	max-width: 900px;
 	margin:0 auto;
 	padding: 10px;
+	@include clearfix;
 }
 
 .hero {
@@ -15,18 +16,14 @@
 }
 
 header {
-	@include clearfix;
+	@include clearfix();
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
 .social {
-	@include span-columns(6);
-	@include shift(3);
-}
-
-section {
-	@include clearfix;
+	@include column(6);
+	@include push(3);
 }
 
 .about {
@@ -34,16 +31,16 @@ section {
 }
 
 .about-content {
-	@include span-columns(5);
-	@include shift(1);
+	@include column(5);
+	@include push(1);
 }
 .profile-img {
-	@include span-columns(4);
-	@include shift(1);
+	@include column(4);
+	@include push(1);
 }
 
 .contact .social-links {
-	@include span-columns(6);
+	@include column(6);
 	li {
 		padding: 10px;
 		padding-left: 0;
@@ -51,7 +48,7 @@ section {
 }
 
 .contact .contact-form {
-	@include span-columns(6);
+	@include column(6);
 }
 
 .scroll {
@@ -67,14 +64,35 @@ section {
 	}
 }
 
+article {
+	border-top: 4px double rgba($dark, 0.5);
+}
+
 
 footer {
 	clear:both;
 	padding: 10px;
 }
 
+.skills .container {
+	@include clearfix();
+	padding: 0;
+}
+
 .skill-group {
-	@include span-columns(3);
+	width: 25%;
+	float: left;
+	padding: 10px;
+	height: 225px;
+	border-left: 1px solid $dark;
+	transition: 0.5s all;
+	&:first-of-type {
+		border-left: 0px solid $dark;
+	}
+	&:hover {
+		background: $accent;
+		box-shadow: inset 0px 10px 10px -10px $dark, inset 0px -10px 10px -10px $dark;
+	}
 }
 
 pre {

@@ -59,7 +59,7 @@ function hackeryou_scripts() {
 
   wp_enqueue_script(
     'scripts', //handle
-    get_template_directory_uri() . '/js/scripts.js', //source
+    get_template_directory_uri() . '/js/scripts.min.js', //source
     array( 'jquery' ), //dependencies
     null, // version number
     true //load in footer
@@ -182,17 +182,12 @@ if ( ! function_exists( 'hackeryou_posted_on' ) ) :
  * Prints HTML with meta information for the current post—date/time and author.
  */
 function hackeryou_posted_on() {
-	printf('<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s',
+	printf('<span class="%1$s"></span> %2$s <span class="meta-sep">',
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
 			get_permalink(),
 			esc_attr( get_the_time() ),
-			get_the_date()
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr( 'View all posts by %s'), get_the_author() ),
-			get_the_author()
+			get_the_date('l, M j, Y')
 		)
 	);
 }

@@ -55,7 +55,6 @@
 <!-- SKILLS SUB-SECTION -->
 <section class="skills">
 	<div class="container">
-		<h2>What I Know</h2>
 			<?php while( has_sub_field('skill_group', 'option') ): ?>
 				<div class="skill-group">
 					<h3><?php the_sub_field('skill_type', 'option') ?></h3>
@@ -120,7 +119,7 @@
 
 <!-- CONTACT SECTION -->
 <section class="contact" id="contact">
-	<div class="container">
+	<div class="container clearfix">
 		<h2>Let's talk</h2>
 		<div class="social-links">
 			<p>Come find me on the internet, I'm usually there.</p>

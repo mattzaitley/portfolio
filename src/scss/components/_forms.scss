@@ -5,13 +5,15 @@ input {
 	border-bottom: 2px solid $accent;
 	color: $dark;
 	padding: 5px;
+	transition: 0s all;
 	&:focus {
 		border-bottom: 2px solid $offset;
 		background: rgba($light, 0.3)
 	}
 }
 
-.contact input[type=submit] {
+
+input[type=submit] {
 	background: $accent;
 	color: $light;
 	border-radius: 3px;

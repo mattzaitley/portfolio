@@ -1,13 +1,13 @@
 #comments .navigation { padding:0 0 18px; }
 h3#comments-title, h3#reply-title {
-  color:#000000;
+  color: $dark;
   font-weight:700;
   font-size:20px;
   margin-bottom:0;
 }
 h3#comments-title { padding:24px 0; }
 .commentlist li.comment {
-  border-bottom:1px solid #e7e7e7;
+  border-bottom:1px solid $light;
   line-height:24px;
   position:relative;
   clear:both;
@@ -28,7 +28,7 @@ h3#comments-title { padding:24px 0; }
   left:0;
 }
 .comment-author cite {
-  color:#000000;
+  color: $dark;
   font-style:normal;
   font-weight:700;
 }
@@ -38,14 +38,14 @@ h3#comments-title { padding:24px 0; }
   margin:0 0 5px;
 }
 .comment-meta a:link, .comment-meta a:visited {
-  color:#888888;
+  color: $grey;
   text-decoration:none;
 }
 .reply {
   font-size:12px;
   padding:0 0 24px;
 }
-.reply a, a.comment-edit-link { color:#888888; }
+.reply a, a.comment-edit-link { color: $grey; }
 .commentlist .children li {
   border:none;
   margin:0;
@@ -53,11 +53,11 @@ h3#comments-title { padding:24px 0; }
 #comments .pingback {
   margin-bottom:18px;
   padding-bottom:18px;
-  border-bottom:1px solid #e7e7e7;
+  border-bottom:1px solid $light;
 }
 .commentlist li.comment+li.pingback { margin-top:-6px; }
 #comments .pingback p {
-  color:#888888;
+  color: $grey;
   font-size:12px;
   line-height:18px;
   display:block;
@@ -67,10 +67,10 @@ h3#comments-title { padding:24px 0; }
   font-style:italic;
   font-size:13px;
 }
-input[type=submit] { color:#333333; }
+
 #respond {
   margin-top:24px;
-  border-top:1px solid #e7e7e7;
+  border-top:1px solid $light;
   overflow:hidden;
   position:relative;
 }
@@ -89,7 +89,7 @@ h3#reply-title { margin:18px 0; }
   font-weight:700;
 }
 #respond label {
-  color:#888888;
+  color: $grey;
   font-size:12px;
 }
 #respond input {
@@ -98,7 +98,7 @@ h3#reply-title { margin:18px 0; }
 }
 #respond textarea { width:98%; }
 #respond dt, #respond dd {
-  color:#888888;
+  color: $grey;
   font-size:12px;
   line-height:18px;
 }

@@ -19,9 +19,12 @@ h1 {
 	@extend %display;
 	font-weight: 400;
 	text-align: center;
-	@include font-size(48px);
 	letter-spacing: 1px;
 	color: $accent;
+}
+
+h1.site-title {
+	@include font-size(48px);
 }
 
 h2, h3, h4, h5 {
@@ -36,6 +39,20 @@ h2 {
 h2.tagline {
 	font-family: $main-font;
 	text-transform: none;
+}
+
+h2.entry-title {
+	@extend h2.tagline;
+	text-align: left;
+	font-weight: 400;
+	a {
+		position: relative;
+		@extend %underline-border;	
+	}
+}
+
+h4.byline {
+	text-align: left;
 }
 
 

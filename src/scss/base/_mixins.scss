@@ -32,3 +32,48 @@
 	left: 50%;
 	transform: translateX(-50%);
 }
+
+%section-padding {
+	padding-top: 30px;
+	padding-bottom: 100px;
+	h2 {
+		padding-bottom: 30px;
+	}
+}
+
+%flashy-border {
+	&:after {
+		content: '';
+		height: 1px;
+		bottom: -1px;
+		position: absolute;
+		left: 50%;
+		width: 0;
+		transition: 0.3s all;
+		background: $accent;
+		}
+		&:hover:after {
+		width: 100%;
+		left: 0;
+		background: $offset;
+	}
+}
+
+%underline-border {
+	&:after {
+		content: '';
+		height: 1px;
+		bottom: -1px;
+		position: absolute;
+		left: 0;
+		width: 0;
+		transition: 0.3s all;
+		background: $accent;
+		}
+		&:hover:after {
+		width: 100%;
+		left: 0;
+		background: $offset;
+	}
+}
+

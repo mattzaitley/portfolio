@@ -3,6 +3,7 @@
 
 <div class="main">
   <div class="container">
+  	<h1>Blog</h1>
 
     <div class="content">
     		<?php get_template_part( 'loop', 'index' );	?>

@@ -4,7 +4,7 @@ header h2 {
 	font-family: $display-font;
 	font-weight: 400;
 	@include font-size(30px);
-	@include span-columns(2);
+	@include column(2);
 	margin: 0;
 	margin-top: 15px;
 	&:hover {
@@ -25,8 +25,7 @@ svg {
 
 //NAV
 nav {
-	@include span-columns(8);
-	@include shift(2);
+	@include column(10);
 }
 
 ul.menu {
@@ -46,20 +45,6 @@ li.menu-item {
 		font-weight: 400;
 		@include font-size(14px);
 		padding: 20px;
-		&:after {
-			content: '';
-			height: 1px;
-			bottom: -1px;
-			position: absolute;
-			left: 50%;
-			width: 0;
-			transition: 0.3s all;
-			background: $accent;
-		}
-		&:hover:after {
-			width: 100%;
-			left: 0;
-			background: $offset;
-		}
+		@extend %flashy-border
 	}
 }

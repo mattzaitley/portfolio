@@ -6,18 +6,29 @@ body {
 
 section.about {
 	background: $light;
+	@extend %section-padding;
 }
 
 section.skills {
 	background: $grey;
+	padding-bottom: 0;
+	box-shadow: inset 0px 10px 10px -10px $dark, inset 0px -10px 10px -10px $dark;
 }
 
 section.portfolio {
 	background: $dark;
+	@extend %section-padding;
 }
 
 section.contact {
 	// background: $light;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.main {
+	background: rgba($light, 0.8);
+	box-shadow: inset 0px 10px 10px -10px $dark;
 }
 
 footer {
