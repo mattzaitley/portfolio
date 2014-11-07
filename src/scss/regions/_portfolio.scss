@@ -1,98 +1,75 @@
 //portfolio pieces
-.portfolio h2 {
-	color: $light;
-}
-
-
 .portfolio-piece {
-	width: 100%;
-	float: left;
 	h3 {
+		text-align: left;
 		text-transform: uppercase;
-		font-weight: 700;
-		position: absolute;
-		top: 10%;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 20;
-		color: $light;	
-		&:after {
-			position: absolute;
-			content: '';
-			bottom: -1px;
-			width: 0%;
-			height: 1px;
-			left: 50%;
-			background:$offset;
-			transition: 0.3s all;
-		}
-	}
-	a {
-		font-weight: 700;
-	}
-	a.more-info {
-		position: absolute;
-		z-index: 30;
-		top: 65%;
-		@extend %centre-x;
-	}
-	p {
-		position: absolute;
-		z-index: 30;
-		top: 20%;
-		@extend %centre-x;
-	}
-}
-
-div.preview-image {
-	position: relative;
-	&:after {
-		content: '';
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-		background: rgba($dark, 0.9);
-		transition: 0.3s all;
-	}
-	&:hover {
-		&:after{
-			background: rgba($dark, 0.7);
-		}
-		h3:after {
-			width: 100%;
-			left: 0%;
-		}
+		font-weight: 400;
+		@include font-size(26px);
+		@include column(8);
+		@include push(1);
+		color: $accent;
 	}
 	h4 {
+		@include column(2);
+		text-align: right;
+	}
+	img {
+		@include column(10);
+		@include push(1);
+		border: 1px solid $grey;
+		box-shadow: 0px 0px 10px rgba($dark, 0.3);
+		margin-top: 20px;
+	}
+}
+
+a.live-link {
+	position: relative;
+	&:hover i {
+		color: $offset;
+	}
+	i {
+		color: rgba($accent, 0);
+		@include font-size(16px);
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		z-index: 10;
+		right: -15px;
+		transition: 0.3s all;
+	}
+}
+
+a.portfolio-link {
+	padding: 5px;
+	transition: 0.3s;
+	border: 1px solid $accent;
+	border-radius: 3px;
+	display: inline-block;
+	&:hover{
+		background: $accent;
 		color: $light;
-		// font-weight: 700;
-		line-height: 1.5;
+	}
+}
+
+.portfolio h2 {
+	color: $dark;
+}
+
+.portfolio-desc {
+	@include column(10);
+	@include push(1);
+	p {
 		text-align: center;
-		width: 50%;
-		margin: 0 25%;
 	}
 }
 
 .tech-used {
 	text-align: center;
-	position: absolute;
-	bottom: 0%;
-	left: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	width: 100%;
+	max-width: 100%;
 	z-index: 20;
 	li {
 		text-transform: uppercase;
 		@include font-size(12px);
 		color: $dark;
 		border: 1px solid rgba($dark, 0.5);
-		background: $accent;
+		background: $light;
 		border-radius: 3px;
 		padding: 4px;
 		display: inline-block;

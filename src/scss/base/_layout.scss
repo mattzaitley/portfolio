@@ -91,7 +91,7 @@ footer {
 	}
 	&:hover {
 		background: $accent;
-		box-shadow: inset 0px 10px 10px -10px $dark, inset 0px -10px 10px -10px $dark;
+		box-shadow: inset 0px 10px 10px -10px rgba($dark, 0.5), inset 0px -10px 10px -10px rgba($dark, 0.5);
 	}
 }
 

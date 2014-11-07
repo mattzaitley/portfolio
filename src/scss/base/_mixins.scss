@@ -42,6 +42,7 @@
 }
 
 %flashy-border {
+	position: relative;
 	&:after {
 		content: '';
 		height: 1px;
@@ -60,6 +61,7 @@
 }
 
 %underline-border {
+	position: relative;
 	&:after {
 		content: '';
 		height: 1px;

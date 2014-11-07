@@ -1,4 +1,8 @@
 $(function(){
 	$('a').smoothScroll();
-	//your jQuery here
+	$('.flexslider').flexslider({
+    	animation: "slide",
+    	selector: ".slides > section",
+    	slideshow: false
+  	});
 });

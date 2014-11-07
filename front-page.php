@@ -73,47 +73,49 @@
 	<h2>What I Make</h2>
 
 	<?php //CUSTOM LOOP FOR BRINGING IN 4 PORTFOLIO ITEMS ?>
-	<?php
+	<div class="flexslider">
+		<div class="slides">
+			<?php
 
-	$portfolio = new WP_Query(
-		array(
-			'posts_per_page' => 4,
-			'post_type' => 'portfolio',
-			'order' => 'ASC'
-			)
-	); ?>
+			$portfolio = new WP_Query(
+				array(
+					'posts_per_page' => -1,
+					'post_type' => 'portfolio',
+					'order' => 'ASC'
+					)
+			); ?>
 
-	<?php if ( $portfolio->have_posts() ) : ?>
+			<?php if ( $portfolio->have_posts() ) : ?>
 
-		<?php while ($portfolio->have_posts()) : $portfolio->the_post(); ?>
+				<?php while ($portfolio->have_posts()) : $portfolio->the_post(); ?>
+					<section class="portfolio-piece" id="<?php echo $post->post_name; ?>">
+						<?php //get list of techs used and put them into a UL ?>
+						<?php $image = get_field('preview_image'); ?>
+						<h3><a href="<?php the_field('live_link') ?>" class="live-link" target="_blank"><?php the_title(); ?><i class="fa fa-external-link-square"></i></a>
+						</h3>
+						<h4>
+							<a href="<?php the_field('github_link') ?>" class="portfolio-link" target="_blank">On GitHub <i class="fa fa-github"></i></a>
+						</h4>
+						<img src="<?php echo $image['sizes']['large-preview'] ?>">
+							<div class="portfolio-desc">
+								<p><?php the_field('short_desc') ?></p>
+								<?php $terms = wp_get_object_terms(get_the_ID(), 'technology', array('orderby' => 'term_id', 'order' => 'ASC', 'fields' => 'names')) ?>
+								<ul class="tech-used">
+									<?php foreach ($terms as $term) {
+									echo "<li>$term</li>";
+								} ?>
+								</ul>
+							</div><!-- /.portfolio-desc -->
+					</section>
+				<?php endwhile; ?>
 
-			<section class="portfolio-piece" id="<?php echo $post->post_name; ?>">
-				<?php //get list of techs used and put them into a UL ?>
-				<div class="preview-image">
-					<h3><?php the_title(); ?></h3>
-					<?php $terms = wp_get_object_terms(get_the_ID(), 'technology', array('orderby' => 'term_id', 'order' => 'ASC', 'fields' => 'names')) ?>
-					<ul class="tech-used">
-						<?php foreach ($terms as $term) {
-							echo "<li>$term</li>";
-						} ?>
-					</ul>
-					<h4><?php the_field('short_desc') ?></h4>
-					<a href="" class="more-info" title="More info">More info</a>
-					<p>
-						<a href="<?php the_field('live_link') ?>" class="view live">View live site</a>
-						<a href="<?php the_field('github_link') ?>">View on GitHub</a>
-					</p>
-					<?php $image = get_field('preview_image'); ?>
-					<img src="<?php echo $image['sizes']['large-preview'] ?>">
-				</div>
-			</section>
-		<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
 
-		<?php wp_reset_postdata(); ?>
-
-	<?php else:  ?>
-		<!-- [stuff that happens if there aren't any posts] -->
-	<?php endif; ?>
+			<?php else:  ?>
+				<!-- [stuff that happens if there aren't any posts] -->
+			<?php endif; ?>
+		</ul>
+	</div> <!-- /.flexslider -->
   </div> <!-- /.container -->
 </section> <!-- /.main -->
 

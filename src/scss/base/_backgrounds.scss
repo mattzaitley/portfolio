@@ -4,6 +4,10 @@ body {
 	background-attachment: fixed;
 }
 
+section.hero {
+	box-shadow: inset 0px -10px 10px -10px rgba($dark, 0.5);
+}
+
 section.about {
 	background: $light;
 	@extend %section-padding;
@@ -12,23 +16,28 @@ section.about {
 section.skills {
 	background: $grey;
 	padding-bottom: 0;
-	box-shadow: inset 0px 10px 10px -10px $dark, inset 0px -10px 10px -10px $dark;
+	box-shadow: inset 0px 10px 10px -10px rgba($dark, 0.5), inset 0px -10px 10px -10px rgba($dark, 0.5);
 }
 
 section.portfolio {
-	background: $dark;
+	background: $light;
 	@extend %section-padding;
+	h2 {
+		padding-bottom: 0;
+	}
+	padding-bottom: 0;
 }
 
 section.contact {
 	// background: $light;
 	padding-top: 30px;
 	padding-bottom: 50px;
+	box-shadow: inset 0px 10px 10px -10px rgba($dark, 0.5), inset 0px -10px 10px -10px rgba($dark, 0.5);
 }
 
 .main {
 	background: rgba($light, 0.8);
-	box-shadow: inset 0px 10px 10px -10px $dark;
+	box-shadow: inset 0px 10px 10px -10px rgba($dark, 0.5);
 }
 
 footer {
