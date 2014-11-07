@@ -54,8 +54,11 @@ header {
 .scroll {
 	margin-top: 150px;
 	text-align: center;
+	position: relative;
 	@include font-size(36px);
 	a {
+		position: relative;
+		@include animation('bounce 2s infinite');
 		padding: 30px;
 		color: $light;
 		&:hover {

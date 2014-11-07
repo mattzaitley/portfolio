@@ -302,6 +302,48 @@ h2.entry-title a:hover:after {
   background: #D96100;
 }
 
+@-webkit-keyframes $animation-name {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+@-ms-keyframes $animation-name {
+  0%, 20%, 50%, 80%, 100% {
+    -ms-transform: translateY(0);
+        transform: translateY(0);
+  }
+  40% {
+    -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+  }
+  60% {
+    -ms-transform: translateY(-15px);
+        transform: translateY(-15px);
+  }
+}
+@keyframes $animation-name {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
 body {
   width: 100%;
   *zoom: 1;
@@ -435,10 +477,15 @@ header:after {
 .scroll {
   margin-top: 150px;
   text-align: center;
+  position: relative;
   font-size: 36px;
   font-size: 2.25rem;
 }
 .scroll a {
+  position: relative;
+  -webkit-animation: bounce 2s infinite;
+  -ms-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
   padding: 30px;
   color: #ecf0f1;
 }
@@ -896,17 +943,17 @@ html[xmlns] .slides {
 }
 input, textarea {
   border: 0;
-  background: rgba(236, 240, 241, 0);
+  background: rgba(236, 240, 241, 0.3);
   outline: 0;
   border-bottom: 2px solid #20b2aa;
   color: #2c3e50;
   padding: 5px;
-  -webkit-transition: 0s all;
-          transition: 0s all;
+  -webkit-transition: 0.3s all;
+          transition: 0.3s all;
 }
 input:focus, textarea:focus {
   border-bottom: 2px solid #D96100;
-  background: rgba(236, 240, 241, 0.3);
+  background: rgba(236, 240, 241, 0.6);
 }
 
 input[type=submit], textarea[type=submit] {
@@ -933,7 +980,7 @@ textarea {
 }
 textarea:focus {
   border: 2px solid #D96100;
-  background: rgba(236, 240, 241, 0.3);
+  background: rgba(236, 240, 241, 0.6);
 }
 
 #comments .navigation {

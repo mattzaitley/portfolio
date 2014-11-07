@@ -1,14 +1,14 @@
 input {
 	border: 0;
-	background: rgba($light, 0);
+	background: rgba($light, 0.3);
 	outline: 0;
 	border-bottom: 2px solid $accent;
 	color: $dark;
 	padding: 5px;
-	transition: 0s all;
+	transition: 0.3s all;
 	&:focus {
 		border-bottom: 2px solid $offset;
-		background: rgba($light, 0.3)
+		background: rgba($light, 0.6);
 	}
 }
 
@@ -37,6 +37,6 @@ textarea {
 	border: 2px solid $accent;
 	&:focus {
 		border: 2px solid $offset;
-		background: rgba($light, 0.3)
+		background: rgba($light, 0.6)
 	}
 }
