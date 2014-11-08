@@ -7,10 +7,23 @@
 		@include font-size(26px);
 		@include column(8);
 		@include push(1);
+		@include bp(large-mobile) {
+			@include column(7);
+			@include push(1);
+		}
+		@include bp(medium-mobile) {
+			@include column(8);
+		}
 		color: $accent;
 	}
 	h4 {
 		@include column(2);
+		@include bp(large-mobile) {
+			@include column(3);
+		}
+		@include bp(medium-mobile) {
+			@include column(4);
+		}
 		text-align: right;
 	}
 	img {
@@ -19,6 +32,10 @@
 		border: 1px solid $grey;
 		box-shadow: 0px 0px 10px rgba($dark, 0.3);
 		margin-top: 20px;
+		@include bp(medium-mobile) {
+			@include column(12);
+			margin-top: 20px;
+		}
 	}
 }
 
@@ -28,10 +45,10 @@ a.live-link {
 		color: $offset;
 	}
 	i {
-		color: rgba($accent, 0);
+		color: rgba($accent, 1);
 		@include font-size(16px);
 		position: absolute;
-		right: -15px;
+		right: -20px;
 		transition: 0.3s all;
 	}
 }
@@ -55,6 +72,9 @@ a.portfolio-link {
 .portfolio-desc {
 	@include column(10);
 	@include push(1);
+	@include bp(medium-mobile) {
+		@include column(12);
+	}
 	p {
 		text-align: center;
 	}

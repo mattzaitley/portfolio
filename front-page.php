@@ -24,30 +24,32 @@
 <section class="about" id="about">
 	<div class="container">
 		<h2>Who I Am</h2>
-		<div class="about-content">
+		<div class="bio">
+			<div class="profile-img">
+				<img src="<?php echo get_template_directory_uri() . '/img/headshot.jpg' ?>"  alt="This is a picture of my face">
+			</div>
+			<div class="about-content">
+				
+				<?php $about = new WP_Query(
+					array(
+						'posts_per_page' => 1, 
+						'pagename' => 'about'
+					)
+				); ?>
 			
-			<?php $about = new WP_Query(
-				array(
-					'posts_per_page' => 1, 
-					'pagename' => 'about'
-				)
-			); ?>
-
-			<?php if ( $about->have_posts() ) : ?>
-
-				<?php while ( $about->have_posts() ) : $about->the_post(); ?>
-					<?php the_content() ?>
-				<?php endwhile; ?>
-
-					<?php wp_reset_postdata(); ?>
-
-			<?php else:  ?>
-				<p>About not found</p>
-			<?php endif; ?>
-		</div> <!-- /.about-content -->
-		<div class="profile-img">
-			<img src="<?php echo get_template_directory_uri() . '/img/headshot.jpg' ?>"  alt="This is a picture of my face">
-		</div>
+				<?php if ( $about->have_posts() ) : ?>
+			
+					<?php while ( $about->have_posts() ) : $about->the_post(); ?>
+						<?php the_content() ?>
+					<?php endwhile; ?>
+			
+						<?php wp_reset_postdata(); ?>
+			
+				<?php else:  ?>
+					<p>About not found</p>
+				<?php endif; ?>
+			</div> <!-- /.about-content -->
+		</div><!-- /.bio -->
 	</div><!-- /.container -->
 </section><!-- /.about -->
 
@@ -72,7 +74,7 @@
   <div class="container">
 	<h2>What I Make</h2>
 
-	<?php //CUSTOM LOOP FOR BRINGING IN 4 PORTFOLIO ITEMS ?>
+	<?php //CUSTOM LOOP FOR BRINGING IN ALL PORTFOLIO ITEMS INTO FLEXSLIDER ?>
 	<div class="flexslider">
 		<div class="slides">
 			<?php
@@ -91,10 +93,10 @@
 					<section class="portfolio-piece" id="<?php echo $post->post_name; ?>">
 						<?php //get list of techs used and put them into a UL ?>
 						<?php $image = get_field('preview_image'); ?>
-						<h3><a href="<?php the_field('live_link') ?>" class="live-link" target="_blank"><?php the_title(); ?><i class="fa fa-external-link-square"></i></a>
+						<h3><a href="<?php the_field('live_link') ?>" class="live-link" target="_blank" title="View live"><?php the_title(); ?><i class="fa fa-external-link"></i></a>
 						</h3>
 						<h4>
-							<a href="<?php the_field('github_link') ?>" class="portfolio-link" target="_blank">On GitHub <i class="fa fa-github"></i></a>
+							<a href="<?php the_field('github_link') ?>" class="portfolio-link" title="On GitHub" target="_blank">On GitHub <i class="fa fa-github"></i></a>
 						</h4>
 						<img src="<?php echo $image['sizes']['large-preview'] ?>">
 							<div class="portfolio-desc">

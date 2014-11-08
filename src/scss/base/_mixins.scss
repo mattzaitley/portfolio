@@ -1,15 +1,24 @@
 @mixin bp($point) {
-// Portrait tablet and small desktops
-	@if $point == large {
-		@media (max-width: 940px) { @content; }
+// Monster screens
+	@if $point == x-large {
+		@media (min-width: 2000px) { @content; }
 	}
-//Landscape phone to portrait tablet
-	@if $point == medium {
+
+// Portrait tablet and small desktops
+	@if $point == large-mobile {
 		@media (max-width: 768px) { @content; }
 	}
-//Landscape phones and down
-	@if $point == small {
+//Landscape phone to portrait tablet
+	@if $point == medium-mobile {
+		@media (max-width: 620px) { @content; }
+	}
+//Landscape phones
+	@if $point == small-mobile {
 		@media (max-width: 480px) { @content; }
+	}
+//Portrait phones and down
+	@if $point == tiny-mobile {
+		@media (max-width: 400px) { @content; }
 	}
 }
 
@@ -24,19 +33,19 @@
 }
 
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes $animation-name {
+  @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes $animation-name {
+  @-moz-keyframes #{$animation-name} {
     @content;
   }  
-  @-ms-keyframes $animation-name {
+  @-ms-keyframes #{$animation-name} {
     @content;
   }
-  @-o-keyframes $animation-name {
+  @-o-keyframes #{$animation-name} {
     @content;
   }  
-  @keyframes $animation-name {
+  @keyframes #{$animation-name} {
     @content;
   }
 }
@@ -76,7 +85,7 @@
 		position: absolute;
 		left: 50%;
 		width: 0;
-		transition: 0.3s all;
+		transition: 0.3s all ease-in-out;
 		background: $accent;
 		}
 		&:hover:after {
@@ -95,7 +104,7 @@
 		position: absolute;
 		left: 0;
 		width: 0;
-		transition: 0.3s all;
+		transition: 0.3s all ease-in-out;
 		background: $accent;
 		}
 		&:hover:after {

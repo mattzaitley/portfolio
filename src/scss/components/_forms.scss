@@ -35,8 +35,23 @@ textarea {
 	@extend input;
 	border-radius: 3px;
 	border: 2px solid $accent;
+	@include bp(large-mobile) {
+		width: 100%;
+	}
 	&:focus {
 		border: 2px solid $offset;
 		background: rgba($light, 0.6)
 	}
+}
+
+::-webkit-input-placeholder {
+   color: rgba($dark, 0.8);
+}
+
+::-moz-placeholder {  // Firefox 19+
+	color: rgba($dark, 0.8);
+}
+
+:-ms-input-placeholder {  
+	color: rgba($dark, 0.8);
 }

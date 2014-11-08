@@ -33,14 +33,46 @@ header {
 .about-content {
 	@include column(5);
 	@include push(1);
+	@include bp(large-mobile) {
+		@include column(6);
+		@include push(1);
+	}
+	@include bp(medium-mobile) {
+		@include column(10);
+		@include push(1);
+		text-align: center;
+	}
+	p:first-of-type {
+		margin-top: 0;
+		@include bp(medium-mobile) {
+			margin-top: 1em;
+		}
+	}
 }
+
 .profile-img {
+	position: relative;
+	justify-content: center;
 	@include column(4);
 	@include push(1);
+	@include bp(large-mobile) {
+		@include column(5);
+	}
+	@include bp(medium-mobile) {
+		@include column(6);
+		@include push(3);
+	}
 }
 
 .contact .social-links {
 	@include column(6);
+	@include bp(large-mobile) {
+		@include column(10);
+		@include push(1);
+		p {
+			text-align: center;
+		}
+	}
 	li {
 		padding: 10px;
 		padding-left: 0;
@@ -49,20 +81,26 @@ header {
 
 .contact .contact-form {
 	@include column(6);
+	@include bp(large-mobile) {
+		@include column(10);
+		@include push(1);
+	}
 }
 
 .scroll {
 	margin-top: 150px;
 	text-align: center;
-	position: relative;
 	@include font-size(36px);
+	position: relative;
 	a {
-		position: relative;
-		@include animation('bounce 2s infinite');
-		padding: 30px;
 		color: $light;
+		@include animation('bounce 3s infinite');
+		padding: 30px;
+		position: absolute;
+		transform: translateX(-50%) translateY(0);
 		&:hover {
 			color: $dark;
+			@include animation('none');
 		}
 	}
 }
@@ -95,6 +133,12 @@ footer {
 	&:hover {
 		background: $accent;
 		box-shadow: inset 0px 10px 10px -10px rgba($dark, 0.5), inset 0px -10px 10px -10px rgba($dark, 0.5);
+	}
+	@include bp(medium-mobile) {
+		width: 50%;
+		&:nth-of-type(n+3){
+			border-top: 1px solid $dark;
+		}
 	}
 }
 

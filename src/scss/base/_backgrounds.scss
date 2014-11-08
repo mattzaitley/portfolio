@@ -11,6 +11,9 @@ section.hero {
 section.about {
 	background: $light;
 	@extend %section-padding;
+	@include bp(medium-mobile) {
+		padding-bottom: 50px;
+	}
 }
 
 section.skills {
