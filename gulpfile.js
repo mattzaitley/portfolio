@@ -46,7 +46,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean', function(cb) {
-	del(['css', 'js'], cb)
+	del(['css', 'js/scripts.js', 'js/scripts.min.js', 'img/*.png', 'img/*.jpg'], cb)
 });
 
 gulp.task('default', ['clean'], function() {

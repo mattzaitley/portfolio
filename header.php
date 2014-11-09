@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="no-js">
 <html <?php language_attributes(); ?>>
 <head>
 	<?php // Load Meta ?>
@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php  wp_title('|', true, 'right'); ?></title>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+  <?php //Modernizr ?>
+  <script src="<?php echo get_template_directory_uri() . '/js/modernizr.js' ?>"></script>
   <?php // Metatags ?>
   <meta name="keywords" content="Matt Fairley, Front End Development, Matt, Fairley, Front end developer, Toronto Developer">
   <meta name="description" content="Front-end developer. Pop culture nerd. Not a robot.">
