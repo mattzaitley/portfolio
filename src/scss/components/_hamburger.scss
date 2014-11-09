@@ -1,0 +1,122 @@
+//hidden nav!
+
+span.hamburger {
+	display: none;
+	float: right;
+	padding: 20px;
+  margin-top: 15px;
+	@include bp(medium-mobile) {
+		position: fixed;
+		z-index: 1001;
+		top: 0;
+		right: 0;
+		display: block;
+	}
+}
+$button-size : 2rem; 
+$transition: .5s; // increase this to see the transformations in slow-motion
+ 
+.lines-button {
+  display: inline-block;
+  padding: $button-size/2 $button-size/4;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  border-radius: $button-size/7;
+ 
+  &:hover {
+    opacity: 1;
+  }
+ 
+  &:active {
+    transition: 0;
+  }
+}
+
+
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/7;
+  background: $accent;
+  border-radius: $button-size/14; 
+  transition: $transition;
+}
+.lines {
+   
+  //create middle line
+  @include line;
+  position: relative; 
+ 
+  // create the upper and lower lines as pseudo-elements of the middle line
+  &:before, &:after {
+   
+   @include line;
+    position: absolute;
+      left:0;
+    content: '';
+    transform-origin: $button-size/14 center;
+  }
+  &:before { top: $button-size/4; }
+  &:after { top: -$button-size/4; }
+}
+
+
+.lines-button:hover {
+  opacity: 1;
+     
+  .lines {
+    &:before { top: $button-size/3; }
+    &:after { top: -$button-size/3; }
+  }
+}
+
+.lines-button.x.close .lines{
+ 
+    //hide the middle line
+    background: rgba($offset, 0);
+ 
+    //overlay the lines by setting both their top values to 0
+    &:before, &:after{
+      transform-origin: 50% 50%;
+      top:0;
+      width: $button-size;
+    }
+ 
+    // rotate the lines to form the x shape
+    &:before{
+      transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      transform: rotate3d(0,0,1,-45deg); 
+    }
+}
+
+
+body {
+  @include bp(medium-mobile) {
+    transition: 0.5s all ease-in-out;
+    position: absolute;
+    right: 0;
+  }
+}
+
+body.shift {
+  @include bp(medium-mobile) {
+    position: absolute;
+    right: 160px;
+    overflow: hidden;
+  }
+}
+
+div#overlay {
+  display: none;
+  &.full {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    top: 0;
+    right: 0;
+  }
+}

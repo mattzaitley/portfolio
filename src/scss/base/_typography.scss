@@ -25,6 +25,12 @@ h1 {
 
 h1.site-title {
 	@include font-size(48px);
+	@include bp(medium-mobile) {
+		margin-bottom: 1rem;
+	}
+	@include bp(small-mobile) {
+		@include font-size(40px);
+	}
 }
 
 h2, h3, h4, h5 {
@@ -39,6 +45,9 @@ h2 {
 h2.tagline {
 	font-family: $main-font;
 	text-transform: none;
+	@include bp(medium-mobile) {
+		@include font-size(20px);
+	}
 }
 
 h2.entry-title {

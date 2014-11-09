@@ -11,6 +11,8 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400' rel='stylesheet' type='text/css'>
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+  <!-- favicon -->
+  <link href="<?php echo get_template_directory_uri() . '/img/favicon.png' ?>" rel="icon" type="image/x-icon">
 
   <?php wp_head(); ?>
 </head>
@@ -20,18 +22,25 @@
 
 <header>
   <div class="container">
-    <h2>
+    <h2 class="logo">
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
         <?php get_template_part('img/inline', 'logo.svg');  ?>
         <?php the_field('page_title_short', 'option'); ?>
       </a>
     </h2>
-
+    
     <?php wp_nav_menu( array(
       'container' => 'nav',
+      'container_class' => 'nav',
+      'container_id' => 'nav',
       'menu' => 'header',
       'theme_location' => 'primary'
     )); ?>
+
+    <span class="nav lines-button arrow arrow-left x hamburger" type="button" role="button" aria-label="Toggle Navigation" id="nav-button">
+      <span class="lines"></span>
+    </span>
+    <div id="overlay"></div>
   </div> <!-- /.container -->
 </header><!--/.header-->
 

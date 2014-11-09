@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 	sass = require('gulp-ruby-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
-	// minifycss = require('gulp-minify-css'),
+	minifycss = require('gulp-minify-css'),
 	// jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
@@ -18,10 +18,9 @@ gulp.task('styles', function() {
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass({ style: 'expanded' }))
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('./'))
 		// .pipe(rename({suffix: '.min'}))
 		// .pipe(minifycss())
-		// .pipe(gulp.dest('./'))
+		.pipe(gulp.dest('./'))
 		// .pipe(notify({ message: 'Styles task complete' }));
 });
 

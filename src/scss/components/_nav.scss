@@ -7,6 +7,11 @@ header h2 {
 	@include column(2);
 	margin: 0;
 	margin-top: 15px;
+	@include bp(medium-mobile) {
+		@include column(6);
+		text-align: left;
+		margin-top: 10px;
+	}
 	&:hover {
 		a {
 			color: $offset;
@@ -26,6 +31,23 @@ svg {
 //NAV
 nav {
 	@include column(10);
+	@include bp(medium-mobile) {
+		z-index: 1000;
+		position: fixed;
+		width: 160px;
+		right: -160px;
+		top: 0;
+		margin: 0;
+		height: 100vh;
+		background: $light;
+		border-left: 1px solid $grey;
+		transition: 0.5s all ease-in-out;
+		padding-top: 70px;
+		box-shadow: inset 10px 0 10px -10px rgba($dark, 0.5);
+	}
+	&.shown {
+		right: 0px;
+	}
 }
 
 ul.menu {
@@ -37,6 +59,11 @@ li.menu-item {
 	display: inline-block;
 	margin-left: 20px;
 	padding-top: 5px;
+	@include bp(medium-mobile) {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
 	a {
 		display: inline-block;
 		width: 100%;
@@ -45,6 +72,20 @@ li.menu-item {
 		font-weight: 400;
 		@include font-size(14px);
 		padding: 20px;
-		@extend %flashy-border
+		@extend %flashy-border;
+		@include bp(medium-mobile) {
+			text-align: right;
+			&:hover,
+			&:active {
+				transition: 0;
+				background: rgba($grey, 0.2);
+			}
+			&:after {
+				content: '';
+				height: 0;
+			}
+		}
 	}
 }
+
+

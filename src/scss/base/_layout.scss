@@ -1,8 +1,21 @@
+//set font size for x-large breakpoint
+@include bp(x-large) {
+	html {
+		font-size: 130%;
+	}
+	.hero {
+		padding-top: 250px;
+	}
+}
+
 .container {
 	max-width: 900px;
 	margin:0 auto;
 	padding: 10px;
 	@include clearfix;
+	@include bp(x-large) {
+		max-width: 1200px;
+	}
 }
 
 .hero {
@@ -24,6 +37,10 @@ header {
 .social {
 	@include column(6);
 	@include push(3);
+	@include bp(small-mobile) {
+		@include column(10);
+		@include push(1);
+	}
 }
 
 .about {
@@ -73,6 +90,9 @@ header {
 			text-align: center;
 		}
 	}
+	@include bp(small-mobile) {
+		@include column(12);
+	}
 	li {
 		padding: 10px;
 		padding-left: 0;
@@ -85,6 +105,12 @@ header {
 		@include column(10);
 		@include push(1);
 	}
+	@include bp(small-mobile) {
+		@include column(12);
+		input {
+			width: 100%;
+		}
+	}
 }
 
 .scroll {
@@ -93,13 +119,13 @@ header {
 	@include font-size(36px);
 	position: relative;
 	a {
-		color: $light;
+		color: $dark;
 		@include animation('bounce 3s infinite');
 		padding: 30px;
 		position: absolute;
 		transform: translateX(-50%) translateY(0);
 		&:hover {
-			color: $dark;
+			color: darken($offset, 20);
 			@include animation('none');
 		}
 	}
@@ -127,12 +153,20 @@ footer {
 	height: 225px;
 	border-left: 1px solid $dark;
 	transition: 0.5s all;
-	&:first-of-type {
-		border-left: 0px solid $dark;
+	&:last-of-type {
+		border-right: 1px solid $dark;
 	}
 	&:hover {
 		background: $accent;
 		box-shadow: inset 0px 10px 10px -10px rgba($dark, 0.5), inset 0px -10px 10px -10px rgba($dark, 0.5);
+	}
+	@include bp(large-mobile) {
+		&:first-of-type {
+			border-left: 0;
+		}
+		&:last-of-type {
+			border-right: 0;
+		}
 	}
 	@include bp(medium-mobile) {
 		width: 50%;

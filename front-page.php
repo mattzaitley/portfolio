@@ -72,7 +72,7 @@
 
 <section class="portfolio" id="portfolio">
   <div class="container">
-	<h2>What I Make</h2>
+	<h2>My Work</h2>
 
 	<?php //CUSTOM LOOP FOR BRINGING IN ALL PORTFOLIO ITEMS INTO FLEXSLIDER ?>
 	<div class="flexslider">
@@ -83,6 +83,8 @@
 				array(
 					'posts_per_page' => -1,
 					'post_type' => 'portfolio',
+					'meta_key' => 'order',
+					'orderby' => 'meta_value_num',
 					'order' => 'ASC'
 					)
 			); ?>

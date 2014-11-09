@@ -1,102 +1,118 @@
 //portfolio pieces
 .portfolio-piece {
-	h3 {
-		text-align: left;
-		text-transform: uppercase;
-		font-weight: 400;
-		@include font-size(26px);
-		@include column(8);
-		@include push(1);
-		@include bp(large-mobile) {
-			@include column(7);
-			@include push(1);
-		}
-		@include bp(medium-mobile) {
-			@include column(8);
-		}
-		color: $accent;
-	}
-	h4 {
-		@include column(2);
-		@include bp(large-mobile) {
-			@include column(3);
-		}
-		@include bp(medium-mobile) {
-			@include column(4);
-		}
-		text-align: right;
-	}
-	img {
-		@include column(10);
-		@include push(1);
-		border: 1px solid $grey;
-		box-shadow: 0px 0px 10px rgba($dark, 0.3);
-		margin-top: 20px;
-		@include bp(medium-mobile) {
-			@include column(12);
-			margin-top: 20px;
-		}
-	}
+    h3 {
+        font-weight: 400;
+        text-align: left;
+        text-transform: uppercase;
+        color: $accent;
+        @include font-size(26px);
+        @include column(8);
+        @include push(1);
+        @include bp(large-mobile) {
+            @include column(7);
+            @include push(1);
+        }
+        @include bp(medium-mobile) {
+            @include column(8);
+        }
+        @include bp(small-mobile) {
+            text-align: center;
+            @include column(10);
+            @include push(1);
+        }
+    }
+    h4 {
+        text-align: right;
+        @include column(2);
+        @include bp(large-mobile) {
+            @include column(3);
+        }
+        @include bp(medium-mobile) {
+            @include column(4);
+        }
+        @include bp(small-mobile) {
+            text-align: center;
+            @include column(8);
+            @include push(2);
+            margin-top: 10px;
+        }
+    }
+    img {
+        margin-top: 20px;
+        border: 1px solid $grey;
+        box-shadow: 0 0 10px rgba($dark, .3);
+        @include column(10);
+        @include push(1);
+        @include bp(medium-mobile) {
+            margin-top: 20px;
+        }
+    }
 }
 
 a.live-link {
-	position: relative;
-	&:hover i {
-		color: $offset;
-	}
-	i {
-		color: rgba($accent, 1);
-		@include font-size(16px);
-		position: absolute;
-		right: -20px;
-		transition: 0.3s all;
-	}
+    position: relative;
+    &:hover i {
+        color: $offset;
+    }
+    i {
+        position: absolute;
+        right: -20px;
+        transition: .3s all;
+        color: rgba($accent, 1);
+        @include font-size(16px);
+    }
 }
 
 a.portfolio-link {
-	padding: 5px;
-	transition: 0.3s;
-	border: 1px solid $accent;
-	border-radius: 3px;
-	display: inline-block;
-	&:hover{
-		background: $accent;
-		color: $light;
-	}
+    display: inline-block;
+    padding: 5px;
+    transition: .3s;
+    border: 1px solid $accent;
+    border-radius: 3px;
+    &:hover {
+        color: $light;
+        background: $accent;
+    }
 }
 
 .portfolio h2 {
-	color: $dark;
+    color: $dark;
 }
 
 .portfolio-desc {
-	@include column(10);
-	@include push(1);
-	@include bp(medium-mobile) {
-		@include column(12);
-	}
-	p {
-		text-align: center;
-	}
+    @include column(10);
+    @include push(1);
+    @include bp(medium-mobile) {
+        @include column(12);
+    }
+    p {
+        text-align: center;
+        @include bp(small-mobile) {
+            @include column(10);
+            @include push(1);
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+    }
 }
 
 .tech-used {
-	text-align: center;
-	max-width: 100%;
-	z-index: 20;
-	li {
-		text-transform: uppercase;
-		@include font-size(12px);
-		color: $dark;
-		border: 1px solid rgba($dark, 0.5);
-		background: $light;
-		border-radius: 3px;
-		padding: 4px;
-		display: inline-block;
-		margin: 3px;
-		transition: 0.3s all;
-		&:hover{
-			background: $offset;
-		}
-	}
+    z-index: 20;
+    max-width: 100%;
+    text-align: center;
+    li {
+        display: inline-block;
+        margin: 3px;
+        padding: 4px;
+        transition: .3s all;
+        text-transform: uppercase;
+        color: $dark;
+        border: 1px solid rgba($dark, .5);
+        border-radius: 3px;
+        background: $light;
+        @include font-size(12px);
+        &:hover {
+            background: $offset;
+        }
+    }
 }
