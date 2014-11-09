@@ -19,8 +19,45 @@
 }
 
 .hero {
-	height: 85vh;
-	padding-top: 100px;
+	height: calc(100vh - 90px);
+	padding-top: 10vh;
+	@include bp(short-mobile) {
+		padding-top: 0;
+	}
+	@include bp(shorter-mobile) {
+		height: auto;
+	}
+}
+
+.scroll {
+	margin-top: 150px;
+	text-align: center;
+	@include font-size(36px);
+	position: relative;
+	a {
+		padding: 30px;
+		color: $dark;
+		i {
+			transform: translateX(-50%) translateY(0);
+			position: absolute;
+			@include animation('bounce 3s infinite');
+		}
+		&:hover {
+			color: darken($offset, 20);
+			i {
+				@include animation('none');
+			}
+		}
+	}
+	@include bp(short-mobile) {
+		margin-top: 100px;
+		a {
+			color: $light;
+			&:hover {
+				color: $offset;
+			}
+		}
+	}
 }
 
 
@@ -109,24 +146,6 @@ header {
 		@include column(12);
 		input {
 			width: 100%;
-		}
-	}
-}
-
-.scroll {
-	margin-top: 150px;
-	text-align: center;
-	@include font-size(36px);
-	position: relative;
-	a {
-		color: $dark;
-		@include animation('bounce 3s infinite');
-		padding: 30px;
-		position: absolute;
-		transform: translateX(-50%) translateY(0);
-		&:hover {
-			color: darken($offset, 20);
-			@include animation('none');
 		}
 	}
 }

@@ -28,4 +28,5 @@ $(function(){
 	  		clearNav();
 	  	};
 	});
+  window.viewportUnitsBuggyfill.init();
 });

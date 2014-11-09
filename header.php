@@ -6,7 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php  wp_title('|', true, 'right'); ?></title>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
+  <?php // Metatags ?>
+  <meta name="keywords" content="Matt Fairley, Front End Development, Matt, Fairley, Front end developer, Toronto Developer">
+  <meta name="description" content="Front-end developer. Pop culture nerd. Not a robot.">
+  <meta name="author" content="Matt Fairley">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Matt Fairley">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://mattfairley.com">
+  <meta property="og:image" content="http://mattfairley.com/images/headshot1.jpg">
+  <meta property="og:site_name" content="Matt Fairley">
+  <meta property="og:description" content="Front-end developer. Pop culture nerd. Not a robot.">
   <?php // Load our CSS ?>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400' rel='stylesheet' type='text/css'>
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

@@ -20,6 +20,16 @@
 	@if $point == tiny-mobile {
 		@media (max-width: 400px) { @content; }
 	}
+
+//Short screens
+	@if $point == short-mobile {
+		@media (max-height: 530px) { @content; }
+	}
+//REEEEAL short screens
+	@if $point == shorter-mobile {
+		@media (max-height: 420px) { @content; }
+	}
+
 }
 
 @function calculateRem($size) {

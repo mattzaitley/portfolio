@@ -38,11 +38,11 @@
         }
     }
     img {
-        margin-top: 20px;
         border: 1px solid $grey;
         box-shadow: 0 0 10px rgba($dark, .3);
         @include column(10);
         @include push(1);
+        margin-top: 20px;
         @include bp(medium-mobile) {
             margin-top: 20px;
         }
