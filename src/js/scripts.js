@@ -27,5 +27,5 @@ $(function(){
 	  		clearNav();
 	  	}
 	});
-  window.viewportUnitsBuggyfill.init();
+  // window.viewportUnitsBuggyfill.init();
 });
