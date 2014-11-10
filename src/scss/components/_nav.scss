@@ -43,10 +43,10 @@ nav {
 		border-left: 1px solid $grey;
 		transition: 0.5s all ease-in-out;
 		padding-top: 70px;
-		box-shadow: inset 10px 0 10px -10px rgba($dark, 0.5);
 	}
 	&.shown {
 		right: 0px;
+		box-shadow: 0 0 10px 0 rgba($dark, 0.5);
 	}
 }
 

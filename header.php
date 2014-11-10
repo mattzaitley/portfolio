@@ -1,4 +1,4 @@
-<!DOCTYPE html class="no-js">
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<?php // Load Meta ?>
@@ -31,7 +31,6 @@
 
 
 <body <?php body_class(); ?>>
-
 <header>
   <div class="container">
     <h2 class="logo">

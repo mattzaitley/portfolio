@@ -20,6 +20,9 @@
             @include column(10);
             @include push(1);
         }
+        @include bp(tiny-mobile) {
+            @include column(12);
+        }
     }
     h4 {
         text-align: right;
