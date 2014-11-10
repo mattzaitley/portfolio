@@ -1769,11 +1769,5 @@ $(function(){
 	  		clearNav();
 	  	}
 	});
-  // $(window).load(function() {    
-  //   var height = $(window).height();
-  //   if ($(window).width() <= 768){
-  //     $('body').css('background-size', height*2 + 'px' + ' ' + height + 'px');
-  //     }
-  // });
   window.viewportUnitsBuggyfill.init();
 });

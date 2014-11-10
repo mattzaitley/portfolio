@@ -19,8 +19,11 @@
 }
 
 .hero {
-	height: calc(100vh - 90px);
+	height: calc(100vh - 88px);
 	padding-top: 10vh;
+	@include bp(tiny-mobile) {
+		padding-top: 50px;
+	}
 	@include bp(short-mobile) {
 		padding-top: 0;
 	}
@@ -50,7 +53,7 @@
 		}
 	}
 	@include bp(short-mobile) {
-		margin-top: 100px;
+		margin-top: 90px;
 		a {
 			color: $light;
 			&:hover {

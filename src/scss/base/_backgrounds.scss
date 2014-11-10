@@ -3,6 +3,9 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    @include bp(large-mobile) {
+    	background-size: auto;
+    }
 }
 
 section.hero {
@@ -39,6 +42,9 @@ section.contact {
     padding-top: 30px;
     padding-bottom: 50px;
     box-shadow: inset 0 10px 10px -10px rgba($dark, .5), inset 0 -10px 10px -10px rgba($dark, .5);
+    @include bp(large-mobile) {
+    	background: $light;
+    }
 }
 
 .main {

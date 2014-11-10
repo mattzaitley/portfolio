@@ -2,7 +2,6 @@ var gulp = require('gulp'),
 	sass = require('gulp-ruby-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifycss = require('gulp-minify-css'),
-	// jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
 	rename = require('gulp-rename'),
@@ -17,7 +16,7 @@ gulp.task('styles', function() {
 	return gulp.src('src/scss/*.scss')
 		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 		.pipe(sass({ style: 'expanded' }))
-		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'android 4'))
 		// .pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
 		.pipe(gulp.dest('./'))
@@ -27,8 +26,6 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src('src/js/**/*.js')
 		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
-		// .pipe(jshint('.jshintrc'))
-		// .pipe(jshint.reporter('default'))
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('js'))
 		.pipe(rename({suffix: '.min'}))
