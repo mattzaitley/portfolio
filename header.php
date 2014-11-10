@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="no-js">
 <html <?php language_attributes(); ?>>
 <head>
 	<?php // Load Meta ?>
