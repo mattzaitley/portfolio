@@ -8,9 +8,7 @@
 		<h2 class="tagline"><?php the_field('tagline', 'option'); ?></h2>
 			<div class="social">
 				<?php while( has_sub_field('social_links', 'option') ): ?>
-					<?php $social_link = get_sub_field('social_link', 'option') ?>
-					<?php $social_name = get_sub_field('social_network', 'option') ?>
-					<a href="<?php $social_link ?>" target="_blank" title="<?php $social_name ?>" ><?php the_sub_field('social_logo', 'option') ?></a>
+					<a href="<?php echo the_sub_field('social_link', 'option') ?>" target="_blank" title="<?php echo the_sub_field('social_network', 'option') ?>" ><?php the_sub_field('social_logo', 'option') ?></a>
 				<?php endwhile; ?>
 			</div>
 			<div class="scroll">
@@ -134,7 +132,7 @@
 					<li>
 					<?php $social_link = get_sub_field('social_link', 'option') ?>
 					<?php $social_name = get_sub_field('social_network', 'option') ?>
-					<a href="<?php $social_link ?>" target="_blank" title="<?php $social_name ?>" ><?php the_sub_field('social_logo', 'option') ?>
+					<a href="<?php echo the_sub_field('social_link', 'option') ?>" target="_blank" title="<?php $social_name ?>" ><?php the_sub_field('social_logo', 'option') ?>
 					<span><?php the_sub_field('social_network','option') ?></span>
 					</a>
 					</li>
