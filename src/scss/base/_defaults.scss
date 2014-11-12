@@ -7,29 +7,3 @@ ul {
 
     list-style: none;
 }
-
-
-
-// Global Classes / Wordpress Specific
-.aligncenter {
-    margin: 0 auto; 
-
-    text-align: center;
-}
-.alignleft {
-    float: left;
-}
-.alignright {
-    float: right;
-}
-img.alignleft {
-    padding-right: 5px;
-}
-img.alignright {
-    padding-left: 5px;
-}
-.clear {
-    float: left;
-    clear: both;
-    width: 100%;
-}

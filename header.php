@@ -24,7 +24,7 @@
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
   <!-- favicon -->
-  <link href="<?php echo get_template_directory_uri() . '/img/favicon.png' ?>" rel="icon" type="image/x-icon">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() . '/img/favicon.png' ?>" />
 
   <?php wp_head(); ?>
 </head>
