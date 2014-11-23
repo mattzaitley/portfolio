@@ -109,7 +109,6 @@ header {
 
 .profile-img {
 	position: relative;
-	justify-content: center;
 	@include column(4);
 	@include push(1);
 	@include bp(large-mobile) {
@@ -173,6 +172,9 @@ footer {
 	float: left;
 	padding: 10px;
 	height: 225px;
+	@include bp(x-large) {
+		height: 280px;
+	}
 	border-left: 1px solid $dark;
 	transition: 0.5s all;
 	&:last-of-type {

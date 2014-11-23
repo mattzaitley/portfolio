@@ -9,7 +9,7 @@
   <?php //Modernizr ?>
   <script src="<?php echo get_template_directory_uri() . '/js/modernizr.js' ?>"></script>
   <?php // Metatags ?>
-  <meta name="keywords" content="Matt Fairley, Front End Development, Matt, Fairley, Front end developer, Toronto Developer">
+  <meta name="keywords" content="Matt Fairley, developer, Front End Development, Matt, Fairley, Front end developer, Toronto Developer">
   <meta name="description" content="Front-end developer. Pop culture nerd. Not a robot.">
   <meta name="author" content="Matt Fairley">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,13 +40,26 @@
       </a>
     </h2>
     
-    <?php wp_nav_menu( array(
+  <?php 
+  if (is_page('matt-fairley') == true) {
+
+   wp_nav_menu( array(
       'container' => 'nav',
       'container_class' => 'nav',
       'container_id' => 'nav',
       'menu' => 'header',
       'theme_location' => 'primary'
-    )); ?>
+    ));
+  } else {
+    wp_nav_menu( array(
+      'container' => 'nav',
+      'container_class' => 'nav',
+      'container_id' => 'nav',
+      'menu' => 'header',
+      'theme_location' => 'secondary'
+    ));
+  } ?>
+
 
     <span class="nav lines-button arrow arrow-left x hamburger" type="button" role="button" aria-label="Toggle Navigation" id="nav-button">
       <span class="lines"></span>
