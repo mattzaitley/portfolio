@@ -26,6 +26,9 @@ svg {
 	fill: $accent;
 	width: 30px;
 	transition: 0.3s all ease-in-out;
+  @include bp(tiny-mobile) {
+    height: 30px;
+  }
 }
 
 //NAV
